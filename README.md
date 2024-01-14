@@ -1,30 +1,27 @@
-# Push notification EXPO
-> First need to install ```expo-notification```
-```cmd
+# Push Notification with Expo
+> First, you need to install the `expo-notifications` library:
+
+```bash
 npx expo install expo-notifications
 ```
-> Import it to the project
+> Import it into your project:
 ```js
 import * as Notifications from 'expo-notifications'; 
 ```
-> Now need to sed Notification Handler 
->> It need to be outside of your app class or function
->> You can put it dirctly after imports and before app functicon/class starts You can see exemple in the bottom
+> Now, set up the Notification Handler. Place it outside of your app class or function, directly after imports and before your app function/class starts. You can find an example at the end of the article.
 ### Notification handler
 ```js
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
-    shouldShowAlert: true, // Sowing the alert
-    shouldPlaySound: true, // Plaing Sound
-    shouldSetBadge: false, // ICON
+    shouldShowAlert: true, // Show the alert
+    shouldPlaySound: true, // Play sound
+    shouldSetBadge: false, // Update app icon badge
   }),
 });
 ```
-> ```shouldShowAlert``` - important be true for you can get the notification
-
-> ```shouldPlaySound``` - Enables vibration if it true
-
-> ```shouldSetBadge``` - Enables Icon if it true
+> - `shouldShowAlert`: Important to be true for displaying the notification. 
+> - `shouldPlaySound`: Enables vibration if true
+> - `shouldSetBadge`: Enables app icon badge if true.
 
 ### Setting Notification Body
 ```js
@@ -38,7 +35,7 @@ async function schedulePushNotification() {
   });
 }
 ```
-> You can call to this function after click to the button. See exemple with full code
+> Call this function after clicking a button. See the example with full code:
 ```js
 import { View, Button } from 'react-native';
 import * as Notifications from 'expo-notifications';
