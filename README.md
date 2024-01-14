@@ -24,7 +24,7 @@ Notifications.setNotificationHandler({
 
 > ```shouldPlaySound``` - Enables vibration if it true
 
-> ```should Set Badge``` - Enables Icon if it true
+> ```shouldSetBadge``` - Enables Icon if it true
 
 ### Setting Notification Body
 ```js
